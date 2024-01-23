@@ -2,10 +2,11 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">
   <div class="container">
-    <div class="container mt-2">
-      <div class="row">
-        <h1>Signup Here</h1>
+    <div class="container">
+     
+      <div class="row mt-1 m-4">
         <div class="col-md-3"></div>
+
         <div class="col-md-6">
           {% for message in messages %}
           <div
@@ -22,7 +23,7 @@
           </div>
           {% endfor %}
 
-          <form action="/signup" method="post">
+          <form action="/login" method="post">
             {% csrf_token %}
 
             <div class="form-group">
@@ -37,16 +38,6 @@
 
             <div class="form-group">
               <input
-                type="email"
-                class="form-control"
-                name="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <input
                 type="password"
                 class="form-control mt-2"
                 name="pass1"
@@ -55,38 +46,26 @@
               />
             </div>
 
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control mt-2"
-                name="pass2"
-                placeholder="Confirm Password"
-                required
-              />
-            </div>
-            <div class="form-group mt-2">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Select Categories</option>
-                <option value="1">Analyst</option>
-                <option value="2">Reviewer</option>
-                <option value="3">Controller</option>
-                <option value="3">Approver & Admin</option>
-              </select>
-            </div>
             <br />
 
             <div class="d-grid gap-2">
-              <button class="btn btn-info" type="submit">Signup</button>
+              <button class="btn btn-info" type="submit">Login</button>
             </div>
           </form>
-          <br /><a href="/login">Already User?</a>
-        </div>
+         <a href="" class="text-white m-3">Authorize</a>
+         <a href=""class="text-white m-3">Cancel</a>
+         <a href=""class="text-white m-3">Back</a>
+         <br>
+         <a href=""class="text-white m-3">Approve</a>
+         <a href=""class="text-white m-3">Edit</a>
+         <a href=""class="text-white m-3">Cancel</a>
+         <a href=""class="text-white m-3">Back</a>
 
         <div class="col-md-3"></div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- End Hero -->
+
 {% endblock body %}

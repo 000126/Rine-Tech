@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-# Create your views here.
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -75,4 +72,23 @@ def handleLogout(request):
 
 
 def home(request):
-    return render(request, "home.html")
+    if not request.user.is_authenticated:
+        messages.warning(request, "Please Login and Try Again")
+        return redirect('/login')
+    # Template = Template.objects.all()
+    if request.method == 'POST':
+        temp_na = request.POST.get('template_name')
+        temp_type = request.POST.get('template_type')
+        p_code = request.POST.get('P_code')
+        batch_num = request.POST.get('batch_num')
+        a_r = request.POST.get('a_r number')
+        Template = Template.objects.filter(
+            template=temp_na, template_type=temp_type, project_code=p_code, batch_no=batch_num, a_r_no=a_r)
+    context = {
+        'Temp': Template
+    }
+    return render(request, "home.html", context)
+
+
+def temp(request):
+    return render(request, "awc.html")
