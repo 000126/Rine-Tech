@@ -5,9 +5,11 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('signup', views.signup),
-    path('login', views.handlelogin),
-    path('logout', views.handleLogout, name="logout "),
     path('home', views.home),
-    path('temp', views.temp)
+    path('temp', views.temp),
+    path('new', views.new),
+    path('file_list/', views.file_list, name='file_list'),
+    path('excel/<int:excel_id>/',
+         views.view_excel, name='view_excel'),
+
 ]
