@@ -1,14 +1,11 @@
 from .models import CustomUser
-
-from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
 from django.contrib import messages
 from . models import *
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+
+# for user signup
 
 
 def signup(request):
@@ -39,6 +36,8 @@ def signup(request):
 
     return render(request, 'signup.html')
 
+# for user login
+
 
 def sys_login(request):
     if request.method == 'POST':
@@ -57,12 +56,15 @@ def sys_login(request):
 
     return render(request, 'login.html')
 
+# for logout
+
 
 def handleLogout(request):
     logout(request)
     messages.success(request, "Logout Success")
     return redirect('/auth/login')
-# views.py
+
+# for users list
 
 
 def user_list(request):

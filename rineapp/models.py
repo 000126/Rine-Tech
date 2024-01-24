@@ -1,16 +1,11 @@
-
 from django.db import models
-
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
-# Create your models here.
 
 ext_validator = FileExtensionValidator(['xlsx', 'xlsm', 'xltx'])
-
-# for custom user creation
 
 
 class Template(models.Model):
@@ -39,13 +34,8 @@ class UploadedFile(models.Model):
 
 
 # for excel file
-# models.py
 
 
 class ExcelDocument(models.Model):
     title = models.CharField(max_length=255)
     excel_file = models.FileField(upload_to='excels/')
-
-
-# for custom user
-# yourapp/models.py

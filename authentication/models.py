@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
+
+
+# for creation of custom users with their categories
 
 
 class CustomUser(AbstractUser):
@@ -11,4 +13,3 @@ class CustomUser(AbstractUser):
         ('manager', 'Manager'),
     )
     user_category = models.CharField(max_length=20, choices=USER_CATEGORIES)
-# models.py
