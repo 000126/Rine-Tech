@@ -13,7 +13,7 @@ def signup(request):
         username = request.POST['username']
         password = request.POST['password1']
         user_category = request.POST['user_category']
-        password2 = request.POST.get('password2')
+        password2 = request.POST['password2']
 
         if password != password2:
             messages.info(request, "Password is not Matching")

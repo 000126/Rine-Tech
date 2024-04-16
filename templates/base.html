@@ -4,13 +4,11 @@
   <head>
     {% block header %}
     <meta charset="UTF-8" />
+
+    <link href="{% static 'assets/img/logo.png' %}" rel="icon" type="image" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}{% endblock title %}</title>
-    <link href="{%static 'assets/img/favicon.png'%}" rel="icon" />
-    <link
-      href="{%static 'assets/img/apple-touch-icon.png'%}"
-      rel="apple-touch-icon"
-    />
+    <title>{% block title %}RineTech-{% endblock title %}</title>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -30,32 +28,32 @@
 
     <!-- Vendor CSS Files -->
     <link
-      href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}"
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
       rel="stylesheet"
     />
     <link
-      href="{%static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}"
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
       rel="stylesheet"
     />
     <link
-      href="{%static 'assets/vendor/boxicons/css/boxicons.min.css'%}"
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}"
       rel="stylesheet"
     />
     <link
-      href="{%static 'assets/vendor/glightbox/css/glightbox.min.css'%}"
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}"
       rel="stylesheet"
     />
     <link
-      href="{%static 'assets/vendor/remixicon/remixicon.css'%}"
+      href="{% static 'assets/vendor/remixicon/remixicon.css' %}"
       rel="stylesheet"
     />
     <link
-      href="{%static 'assets/vendor/swiper/swiper-bundle.min.css'%}"
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}"
       rel="stylesheet"
     />
 
     <!-- Template Main CSS File -->
-    <link href="{%static 'assets/css/style.css'%}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet" />
     {% endblock header%}
   </head>
   <body>

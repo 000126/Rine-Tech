@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>{% block title %}Rintech{% endblock title %}</title>
+    <title>{% block title %}Rintech-Files List{% endblock title %}</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -79,8 +79,9 @@
                 <ul>
                   {% for file in files %}
                   <li>
-                    {{ file.title }} -
-                    <a href="{{ file.excel_file.url }}">View</a>
+                    {{ file.field }} -
+                    <!-- <a href="{{ file.uploaded_files.id }}">View</a> -->
+                    (<a href="{% url 'view_excel' excel_id=file.id %}">View</a>)
                   </li>
                   {% endfor %}
                 </ul>

@@ -6,36 +6,20 @@ User = get_user_model()
 
 
 ext_validator = FileExtensionValidator(['xlsx', 'xlsm', 'xltx'])
+val=FileExtensionValidator(['doc','docx'])
 
-
-class Template(models.Model):
-    template = models.FileField(
-        upload_to='template', validators=[ext_validator])
-    template_type = models.CharField(max_length=100)
-    project_code = models.CharField(max_length=100)
-    batch_no = models.IntegerField()
-    a_r_no = models.IntegerField()
-
-    def __str__(self):
-        return self.project_code
-
-# to view files
-
-
-class UploadedFile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    template_name = models.CharField(max_length=100)
-    template_type = models.CharField(max_length=255)
-    template_number = models.CharField(max_length=255)
-    uploaded_file = models.FileField(upload_to='uploads/')
-
-    def __str__(self):
-        return self.template_name
 
 
 # for excel file
 
 
 class ExcelDocument(models.Model):
+    field = models.CharField(max_length=255)
+    uploaded_files = models.FileField(
+        upload_to='Uploaded files', validators=[ext_validator])
+
+
+
+class WordDocument(models.Model):
     title = models.CharField(max_length=255)
-    excel_file = models.FileField(upload_to='excels/')
+    uploaded_files = models.FileField(upload_to='word_files/',validators=[val])
