@@ -74,7 +74,7 @@
                     {% for word_document in word_documents %}
                         <li>
                             {{ word_document.title }}
-                            (<a href="{% url 'render_word_file' document_id=word_document.id %}">View</a>)
+                            (<a href="{% url 'render_word_file' document_id=word_document.id %}" target=" ">View</a>)
                         </li>
                     {% endfor %}
                 </ul>

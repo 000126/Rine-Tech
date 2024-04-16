@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rineapp',
     'authentication',
+    'openpyxl',
+    'django_pandas',
     # 'rest_framework',
     # 'django_rest_passwordreset',
 

@@ -81,7 +81,7 @@
                   <li>
                     {{ file.field }} -
                     <!-- <a href="{{ file.uploaded_files.id }}">View</a> -->
-                    (<a href="{% url 'view_excel' excel_id=file.id %}">View</a>)
+                    (<a href="{% url 'view_excel' excel_id=file.id %}" target=" ">View</a>)
                   </li>
                   {% endfor %}
                 </ul>

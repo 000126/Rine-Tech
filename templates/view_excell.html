@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block title %}File View{% endblock title %} {% block body%}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center">
+  <div class="container">
+    <div class="container">
+     
+      <div class="row mt-1 m-4">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+<h2>file-{{ excel_document.field }}</h2>
+<div>{{ excel_html|safe }}</div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+
+{% endblock body %}
